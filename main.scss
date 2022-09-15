@@ -1,0 +1,459 @@
+//variables
+$size: 6rem;
+$margin-left: 2rem;
+$delay: 0.33s;
+$homePadding:30%;
+//mixing
+//universal
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+.navBar,.homehome,.home{
+  overflow-x: visible;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.appleGreen {
+  color: rgba(33, 202, 10, 1);
+  font-size: 1rem;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  overflow-x:hidden;
+}
+html {
+  font-size: 70%;
+}
+h1,
+.contact,
+h3,
+h2 {
+  text-align: center;
+  text-transform: capitalize;
+}
+i:hover {
+  color: black;
+}
+li {
+  list-style: none;
+}
+.navBar,.aboutMe,.quali,.myWork,.contactMe,footer{
+  width: 100vw;
+}
+
+//nav
+.logo {
+  background-color: rgb(156, 102, 102);
+  width: 4rem;
+  height: 4rem;
+  margin-left: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 0.2rem black;
+  position: absolute;
+  left: -1rem;
+  top: 0.2rem;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-family: "Satisfy", cursive;
+  font-weight: bold;
+  border: 2px solid white;
+  z-index: 2;
+}
+.nav {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+  position: relative;
+  margin-left: 0.5rem;
+}
+.nav::before {
+  height: 100%;
+  width: 100%;
+  color: rgb(45, 241, 19);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  animation: navAnimation 1s linear 1;
+  border-right: 1px solid rgba(33, 202, 10, 1);
+  overflow: hidden;
+}
+.nav:nth-child(2):before {
+  content: "home ";
+  animation-delay: 5.1s;
+}
+.nav:nth-child(3):before {
+  content: "about ";
+  animation-delay: 5.2s;
+}
+.nav:nth-child(4):before {
+  content: "work ";
+  animation-delay: 5.3s;
+}
+.nav:nth-child(5):before {
+  content: "contact ";
+  animation-delay: 5.4s;
+}
+.nav:nth-child(6):before {
+  content: "cv ";
+  animation-delay: 5.5s;
+}
+.nav:nth-child(7):before {
+  content: "blog ";
+  animation-delay: 5.6s;
+}
+@keyframes navAnimation {
+  0% {
+    width: 0%;
+  }
+  70% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.nav:hover::before {
+  color: white;
+  border-color: transparent;
+}
+.navBar {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-bottom: 0.15rem solid black;
+  height: 2.5rem;
+  background-color: rgb(77, 70, 70);
+  position: relative;
+  z-index: 1;
+  padding:0 2rem;
+}
+//home
+.home {
+  height: 20rem;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0 auto;
+  // border: 1px solid black;
+}
+.homehome,
+.home {
+  
+  background-color: #e9fae0;
+}
+.home p {
+  color: red;
+  text-align: right;
+  padding-right: 1rem;
+  font-size: 2rem;
+}
+
+.home ol {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  height: 70%;
+  padding:0 $homePadding;
+  position: relative;
+  background-image: url("./forest.jpg");
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  color: transparent;
+  &::after {
+    content: "";
+    position: absolute;
+    left:$homePadding + 2%;
+    top: 10rem;
+    width: 31rem;
+    border-bottom: 0.4rem solid rgba(33, 202, 10, 0.8);
+    animation: bottomBorder 4s linear 1;
+    border-bottom-left-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+    
+  }
+}
+.home li {
+  animation: Textslide 2s linear;
+  animation-iteration-count: 1;
+  margin-left: $margin-left;
+  font-size: 5rem;
+}
+@keyframes Textslide {
+  0% {
+    margin-left: 100vw;
+  }
+  100% {
+    margin-left: $margin-left;
+  }
+}
+@keyframes bottomBorder {
+  0% {
+    left: 100vw;
+  }
+  90% {
+    left: 100vw;
+  }
+  100% {
+    left:$homePadding + 2%;
+  }
+}
+li:nth-child(1) {
+  animation-delay: $delay;
+}
+li:nth-child(2) {
+  animation-delay: 2 * $delay;
+}
+li:nth-child(3) {
+  animation-delay: 3 * $delay;
+}
+li:nth-child(4) {
+  animation-delay: 4 * $delay;
+}
+li:nth-child(5) {
+  animation-delay: 5 * $delay;
+}
+li:nth-child(6) {
+  animation-delay: 6 * $delay;
+}
+//seperator
+.blockName {
+  color: red;
+}
+.seperator {
+  position: relative;
+  z-index: 1;
+  
+}
+.seperator::before,
+.seperator::after {
+  content: "";
+  width: 33%;
+  height: 100%;
+  border-bottom: 0.5rem double rgba(33, 202, 10, 1);
+  position: absolute;
+  top: -40%;
+  z-index: -1;
+}
+.seperator::before {
+  left: 5%;
+}
+.seperator::after {
+  right: 5%;
+}
+//aboutme
+.aboutMe {
+  background-color: #fbf8f1;
+}
+.aboutMe p {
+  margin:0 2rem;
+  // border: 1px solid black;
+  padding: 4rem;
+}
+.contactMe h2,
+.aboutMe h2 {
+  color: rgba(33, 202, 10, 1);
+}
+img {
+  width: 10rem;
+  border-radius: 50%;
+  float: left;
+  margin: 3% 5% 5% 10%;
+  
+}
+//what i know
+.quali {
+  display: flex;
+  justify-content: space-evenly;
+  clear: both;
+}
+//mywork
+.myWork {
+  background-color: #f5ecde;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 10%;
+  margin: 0 auto;
+}
+.project {
+  width: $size;
+  height: $size;
+  margin: 1.5rem;
+  overflow: hidden;
+  color:white;
+  position: relative;
+  display: grid;
+  place-items: center;
+
+}
+.project img{
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+  margin:0;
+  transition: 1s;
+}
+.project:hover > img{
+    transform: scale(1.5) rotate(15deg);
+    transition: 1s;
+}
+.project p{
+  position: absolute;
+  font-weight: 700; //bold
+  font-size: 1.5rem;
+    
+}
+
+//contact
+.button {
+  background-color: rgba(33, 202, 10, 1);
+  color: white;
+  border: none;
+  padding: 5px;
+  position: relative;
+  width: 30%;
+  margin: 1rem auto;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  transition: all 1s linear;
+  width: 100%;
+  height: 100%;
+  top: -5px;
+  left: -5px;
+  border-top: 2px solid rgba(33, 202, 10, 1);
+  border-left: 2px solid rgba(33, 202, 10, 1);
+}
+.button::after {
+  content: "";
+  position: absolute;
+  transition: all 1s linear;
+  width: 100%;
+  height: 100%;
+  bottom: -5px;
+  right: -5px;
+  border-bottom: 2px solid rgba(33, 202, 10, 1);
+  border-right: 2px solid rgba(33, 202, 10, 1);
+}
+.button:hover::before,
+.button:hover::after {
+  width: 10%;
+  height: 40%;
+  box-shadow: gray 0 2px 6px 0;
+}
+.button:hover {
+  box-shadow: gray 0 2px 6px 0;
+}
+.cmLeft {
+  display: inherit;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.cmLeft,
+.cmRight {
+  padding: 2rem;
+}
+.contactMe {
+  background-color: #f0dac1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+//footer
+footer {
+  margin-top: auto;
+  height: 4rem;
+  text-align: center;
+  padding-top: 1rem;
+  background-color: #54bab9;
+  color: white;
+}
+//media Quarry
+@media (max-width: 768px) {
+  html{
+    // font-size: 62.5%;
+  }
+  .home ol{
+    padding:0 25%;
+  }
+  .home ol::after{
+    left: 27% ;
+  }
+  .seperator::before,
+  .seperator::after {
+    width: 34%;
+  }
+}
+@media (max-width: 480px) {
+  .quali {
+    flex-direction: column;
+    align-items: center;
+  }
+  .aboutMe img {
+    float: none;
+    margin: 5% 35%;
+  }
+  .aboutMe p {
+    text-align: center;
+    padding: 0 4rem;
+    margin: 0;
+  }
+  .contactMe {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h2,h3{
+  text-transform: uppercase;
+  }
+  html{
+    font-size: 70%;
+  }
+  .home li{
+    font-size: 4rem;
+  }
+  .home ol::after
+  {
+    width: 27rem;
+  }
+  .home p{
+    font-size: 1.4rem;
+  }
+  .home ol{
+    padding:0 8%;
+  }
+  .home ol::after{
+    left: 14% ;
+  }
+  .seperator::before,
+  .seperator::after {
+    width: 30%;
+  }
+ 
+  
+}
+//samsung galexy s8+
+@media (max-width:365px) {
+  .home ol{
+    padding:0;
+  }
+  .home ol::after{
+    left: 5% ;
+  }
+  
+}
